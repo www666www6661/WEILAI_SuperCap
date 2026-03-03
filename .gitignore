@@ -1,0 +1,12 @@
+﻿# KiCad cache / lock / autosave
+fp-info-cache
+*-cache.lib
+*-rescue.*
+~*.lck
+#auto_saved_files#
+_autosave-*
+*.kicad_prl
+
+# OS / editor
+.DS_Store
+Thumbs.db
