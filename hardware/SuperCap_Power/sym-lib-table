@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "CD32-3R3M")(type "KiCad")(uri "${KIPRJMOD}/kicad_api_libs/CD32-3R3M.kicad_sym")(options "Added by KiCad IPC API")(descr ""))
+)
