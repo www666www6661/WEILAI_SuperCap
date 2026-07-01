@@ -1,0 +1,44 @@
+device_id: Unit_01
+
+sampler:
+  vaside:
+    adc_channel: BSP_ADC_VA
+    k: 0.0072221202
+    b: 0.0072043211
+    cutoff_freq: 250.0
+
+  vbside:
+    adc_channel: BSP_ADC_VB
+    k: 0.0071891751
+    b: -0.0058324210
+    cutoff_freq: 250.0
+
+  iaside:
+    adc_channel: BSP_ADC_IA
+    k: 0.0156454195
+    b: -31.9638103230
+    cutoff_freq: 600.0
+
+  ialpha:
+    adc_channel: BSP_ADC_Ialpha
+    k: -0.0174384104
+    b: 35.6282057916
+    cutoff_freq: 600.0
+
+  ibeta:
+    adc_channel: BSP_ADC_Ibeta
+    k: -0.0173982376
+    b: 35.5657305150
+    cutoff_freq: 600.0
+
+  igamma:
+    adc_channel: BSP_ADC_Igamma
+    k: -0.0173607103
+    b: 35.4806788270
+    cutoff_freq: 600.0
+
+  iRefree:
+    adc_channel: BSP_ADC_IREF
+    k: 0.0130654669
+    b: -26.6822088920
+    cutoff_freq: 250.0
