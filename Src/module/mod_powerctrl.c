@@ -58,6 +58,8 @@ static inline void __attribute__((always_inline)) Module_PowerCtrl_SetRefereePow
 volatile float temp = 0;
 volatile float power_limit_a_to_b;
 volatile float power_limit_b_to_a;
+// volatile float temp_Powerinput;
+//  volatile float temp_Poweroutput;
 
 void Module_PowerCtrl_Control(Module_PowerCtrl *this)
 {
@@ -217,8 +219,23 @@ void Module_PowerCtrl_Control(Module_PowerCtrl *this)
             volt_feedforward *
             (1 + Component_PID_Calculate(&(this->PID_igamma_), ibase_setpoint + igamma_share, this->sampler_->igamma_.current_, this->dt));
 
-        float avg_cmd = (alpha_cmd + beta_cmd + gamma_cmd) / 3.0f;
-        Device_BuckBoost_UpdateMode(&(this->buckboost_), avg_cmd);
+        // 模式判断用三相cmd最大值，避免某相已越过边界但模式仍用均值判断
+        // 原来用 avg_cmd，导致模式切换边界附近三相时序错乱，可能会引发环流和驱动器损坏
+        float max_cmd = MAX(alpha_cmd, MAX(beta_cmd, gamma_cmd));
+        Device_BuckBoost_UpdateMode(&(this->buckboost_), max_cmd);
+
+        // 模式切换时三相强制同步一个周期，避免切换瞬间各相状态不一致
+        static Device_BuckBoostMode_t last_mode = BUCKBOOST;
+        Device_BuckBoostMode_t cur_mode = Device_BuckBoost_GetMode(&(this->buckboost_));
+        if (cur_mode != last_mode)
+        {
+            // 模式刚切换：用三相平均值同步输出一个周期，等待时序稳定
+            float sync_cmd = (alpha_cmd + beta_cmd + gamma_cmd) / 3.0f;
+            Device_BuckBoost_UpdatePWM(&(this->buckboost_), sync_cmd, sync_cmd, sync_cmd);
+            last_mode = cur_mode;
+            return;
+        }
+        last_mode = cur_mode;
 
         Device_BuckBoost_UpdatePWM(&(this->buckboost_), alpha_cmd, beta_cmd, gamma_cmd);
     }

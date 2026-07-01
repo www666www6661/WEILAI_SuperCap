@@ -15,30 +15,30 @@ sampler:
 
   iaside:
     adc_channel: BSP_ADC_IA
-    k: 0.015591137
-    b: -31.8564362174
+    k: 0.0157044651
+    b: -32.0959258172
     cutoff_freq: 600.0
 
   ialpha:
     adc_channel: BSP_ADC_Ialpha
-    k: -0.0170936439
-    b: 34.9226115390
+    k: -0.0177576032
+    b: 36.2831890572
     cutoff_freq: 600.0
 
   ibeta:
     adc_channel: BSP_ADC_Ibeta
-    k: -0.0168254602
-    b: 34.3936958743
+    k: -0.0177222177
+    b: 36.2262553469
     cutoff_freq: 600.0
 
   igamma:
     adc_channel: BSP_ADC_Igamma
-    k: -0.0177414097
-    b: 36.2554439116
+    k: -0.0173607103
+    b: 35.4806788270
     cutoff_freq: 600.0
 
   iRefree:
     adc_channel: BSP_ADC_IREF
-    k:  0.0135766811
-    b: -27.7008655134
+    k: 0.0137866616
+    b: -28.2571284445
     cutoff_freq: 250.0
