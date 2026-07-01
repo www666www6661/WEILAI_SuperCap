@@ -1,0 +1,44 @@
+device_id: infantry_III
+
+sampler:
+  vaside:
+    adc_channel: BSP_ADC_VA
+    k: 0.0073618288
+    b: -0.0145537297
+    cutoff_freq: 250.0
+
+  vbside:
+    adc_channel: BSP_ADC_VB
+    k: 0.0071194790
+    b: 0.0212343018
+    cutoff_freq: 250.0
+
+  iaside:
+    adc_channel: BSP_ADC_IA
+    k: 0.0157316407
+    b: -32.1636197556
+    cutoff_freq: 600.0
+
+  ialpha:
+    adc_channel: BSP_ADC_Ialpha
+    k: -0.0175466526
+    b: 35.8631309592
+    cutoff_freq: 600.0
+
+  ibeta:
+    adc_channel: BSP_ADC_Ibeta
+    k: -0.0176047934
+    b: 35.9807453072
+    cutoff_freq: 600.0
+
+  igamma:
+    adc_channel: BSP_ADC_Igamma
+    k: -0.0171498921
+    b: 35.0633202815
+    cutoff_freq: 600.0
+
+  iRefree:
+    adc_channel: BSP_ADC_IREF
+    k: 0.0143726393
+    b: -29.3721155885
+    cutoff_freq: 250.0

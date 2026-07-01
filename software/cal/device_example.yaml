@@ -1,0 +1,45 @@
+device_id: example_power_001
+description: 示例电源实体参数，请复制后按设备编号另存
+
+sampler:
+  vaside:
+    adc_channel: BSP_ADC_VA
+    k: 0.0073428809
+    b: -0.0676202320
+    cutoff_freq: 250.0
+
+  vbside:
+    adc_channel: BSP_ADC_VB
+    k: 0.0072455170
+    b: -0.0428535364
+    cutoff_freq: 250.0
+
+  iaside:
+    adc_channel: BSP_ADC_IA
+    k: 0.0170487785
+    b: -34.8319823082
+    cutoff_freq: 600.0
+
+  ialpha:
+    adc_channel: BSP_ADC_Ialpha
+    k: -0.0169824765
+    b: 34.6869424325
+    cutoff_freq: 600.0
+
+  ibeta:
+    adc_channel: BSP_ADC_Ibeta
+    k: -0.0173633552
+    b: 35.4643917976
+    cutoff_freq: 600.0
+
+  igamma:
+    adc_channel: BSP_ADC_Igamma
+    k: -0.0167286818
+    b: 34.1624723030
+    cutoff_freq: 600.0
+
+  iRefree:
+    adc_channel: BSP_ADC_IREF
+    k: 0.0138746097
+    b: -28.2941082940
+    cutoff_freq: 250.0
