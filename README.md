@@ -1,1 +1,1 @@
-robomaster WEILAI team supercap controlbroad project 
+Robomaster 未来战队2026赛季超级电容控制板开源
